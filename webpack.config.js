@@ -19,6 +19,21 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: "[name]__[local]__[hash:base64:5]",
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
