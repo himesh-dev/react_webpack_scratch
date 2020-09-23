@@ -34,7 +34,17 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: { outputPath: "static/assets/" },
+        },
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  devServer: {
+    port: 3000,// to run your dev-server at PORT 3000
+  },
 };
